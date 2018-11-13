@@ -1,5 +1,7 @@
+package binaryTree;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Stack;
 
 public class BinTree{
 	public static class TreeNode {
@@ -83,6 +85,33 @@ public class BinTree{
     	inorderTraverse(testTree.get(0));
     	System.out.print("\n");
     	postorderTraverse(testTree.get(0));
+    	//System.out.print("\n");
+    	//noEcursionPre(testTree.get(0));
     }
-
+    
+    /**
+     * 非递归前序遍历
+     * @param node
+     */
+    public static void noEcursionPre(TreeNode node) {
+    	if (node==null) {
+    		return;
+    	}   	
+    	
+    	//辅助栈
+    	Stack<TreeNode> stack = new Stack<>();
+    	TreeNode cur = node;
+    	while(cur!=null || !stack.isEmpty()) {
+    		//while+if 判断
+    		while(cur!=null) {
+    			System.out.print(cur.val + "->");
+    			stack.push(cur);// 不断将左子节点入栈，直到cur为空
+    			cur=cur.left;
+    		}
+    		if(!stack.isEmpty()) {
+    			cur=stack.pop();// 此时弹出最左边的节点
+    			cur=cur.right;
+    		}
+    	}
+    }
 }
