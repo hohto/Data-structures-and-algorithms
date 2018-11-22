@@ -1,8 +1,6 @@
 import java.util.Arrays;
 
 public class Sort {
-	static int[] array = {3,44,38,5,47,15,26,27,48,2,4,19,46,50};
-	
 	//冒泡排序
 	public static void BubbleSort(int[] array){
 		int n = array.length;
@@ -69,6 +67,7 @@ public class Sort {
 	}
 	
 	public static void main(String[] args) {
+		int[] array = {3,44,38,5,47,15,26,27,48,2,4,19,46,50};
 		//BubbleSort(array);
 		//SelectSort(array);
 		//InsertSort(array);
